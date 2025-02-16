@@ -1,0 +1,14 @@
+CREATE TABLE Ticket (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    customerName VARCHAR(255) NOT NULL,
+    customerEmail VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    seatId BIGINT NOT NULL,
+    showtimeId BIGINT NOT NULL,
+    bookingTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    paymentStatus ENUM('SUCCESS', 'FAILED', 'PENDING') NOT NULL,
+    paymentReceiptId BIGINT,
+    CONSTRAINT fk_receipt FOREIGN KEY (paymentReceiptId) REFERENCES PaymentReceipt(id) ON DELETE CASCADE,
+    CONSTRAINT fk_seat FOREIGN KEY (seatId) REFERENCES Seat(id) ON DELETE CASCADE,
+    CONSTRAINT fk_showtime FOREIGN KEY (showtimeId) REFERENCES Showtime(id) ON DELETE CASCADE
+);

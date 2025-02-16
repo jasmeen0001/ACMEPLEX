@@ -1,0 +1,25 @@
+<div class="search-bar-container">
+  <div class="search-bar">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search Movies</mat-label>
+      <input matInput [(ngModel)]="searchQuery" placeholder="Enter movie title" />
+      <button mat-icon-button matSuffix (click)="searchMovies()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+
+<section class="featured-movies">
+  <mat-card style="background-color: black; color: white; padding: 1rem;">
+    <mat-card-header>
+      <mat-card-title>Now Playing</mat-card-title>
+    </mat-card-header>
+    <div class="movie-list">
+      <div mat-card *ngFor="let movie of movies" class="movie-card" (click)="viewMovieDetails(movie)">
+        <img mat-card-image [src]="movie.imageUrl" [alt]="movie.title" class="movie-poster" />
+        <h4 class="movie-title">{{ movie.title }}</h4>
+      </div>
+    </div>
+  </mat-card>
+</section>

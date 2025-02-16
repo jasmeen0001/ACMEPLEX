@@ -1,0 +1,93 @@
+.theater-container {
+  display: flex;
+  gap: 20px;
+}
+
+.theater-list {
+  flex: 1;
+  max-width: 300px;
+}
+
+.theater-item {
+  color: #000;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theater-item:hover {
+  transform: scale(1.05);
+}
+
+.show-times {
+  flex: 2;
+}
+
+.show-time-list button {
+  margin: 5px;
+  width:max-content;
+}
+
+
+.seat-map {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+/* Seat statuses */
+.seat.available {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.seat.unavailable {
+  background-color: #9e9e9e; /* Grey */
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #2196f3; /* Blue */
+  color: white;
+}
+
+mat-card {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+mat-card-content button {
+  width: 50px;
+  height: 50px;
+}
+
+.book-ticket {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.book-ticket button {
+  font-size: 16px;
+  padding: 10px 20px;
+}

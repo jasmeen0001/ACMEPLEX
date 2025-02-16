@@ -1,0 +1,29 @@
+<header class="header">
+  <nav class="navbar">
+    <h1 class="logo">Acmeplex</h1>
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/">
+          <mat-icon>home</mat-icon>
+          Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cancel-ticket">
+          Cancel Ticket
+        </a>
+      </li>
+      <li>
+        <a routerLink="/register">
+          Become a member
+        </a>
+      </li>  
+      <li>
+        <a [routerLink]="isLoggedIn() ? '/profile' : '/login'">
+          <mat-icon>person</mat-icon>
+          Account
+        </a>
+      </li>    
+    </ul>
+  </nav>
+</header>
